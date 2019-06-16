@@ -44,4 +44,57 @@ system.time(
 ##   0.801   0.178   0.367
 ```
 
-READ MORE ABOUT FOREACH AND DOPARALLEL
+## a different loop
+Normally, a for-loop like this produces three values. 
+
+```
+for (i in 1:3) {
+  print(sqrt(i))
+}
+```
+
+Using foreach returns instead each of those values inside its own list, vector, or dataframe depending on how you want it.
+
+```
+library(foreach)
+foreach (i=1:3) %do% {
+  sqrt(i)
+}
+
+# Return a vector
+foreach (i=1:3, .combine=c) %do% {
+  sqrt(i)
+}
+
+# Return a data frame
+foreach (i=1:3, .combine=rbind) %do% {
+  sqrt(i)
+}
+```
+
+The main reason to use foreach is because it works with another package called doParallel, which allows you to loop through funtions while using the different cores on a computer in parallel.
+
+```
+registerDoParallel(numCores)  # use multicore, set to the number of our cores
+foreach (i=1:3) %dopar% {
+  sqrt(i)
+}
+```
+
+A full example of this is "using %dopar% to parallelize a bootstrap analysis where a data set is resampled 10,000 times and the analysis is rerun on each sample, and then the results combined."
+
+```
+# Let's use the iris data set to do a parallel bootstrap
+# From the doParallel vignette, but slightly modified
+x <- iris[which(iris[,5] != "setosa"), c(1,5)]
+trials <- 10000
+system.time({
+  r <- foreach(icount(trials), .combine=rbind) %dopar% {
+    ind <- sample(100, 100, replace=TRUE)
+    result1 <- glm(x[ind,2]~x[ind,1], family=binomial(logit))
+    coefficients(result1)
+  }
+})
+
+#this takes 4.94 seconds compared to >20 seconds when not using parallel
+```

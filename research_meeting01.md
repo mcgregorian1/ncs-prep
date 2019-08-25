@@ -5,6 +5,10 @@
   - funding supposed to come in October, feasibly would start next term
   - open for doing externship/internship; she said she always has projects that students can work on, whether paid or not
 
+#### Stats class
+- student panel from last year, said they would highly recommend not taking 4 classes
+  - next term already has the 3 core courses, so either take one of those in a year's time or take the stats course in Sp 2021
+
 #### Research hours
 - fall colors for phenology research
   - understanding the effect of fall coloration

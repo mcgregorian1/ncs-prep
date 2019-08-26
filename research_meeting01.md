@@ -16,6 +16,14 @@
   - correlation of coloration with climate dynamics and constraints
   - if we have microclimate data, could we not calculate predictions for conditions that signal the "end of the growing season" such that you can predict fall colors?
     - e.g. the [smoky mountains map](https://smokymountains.com/fall-foliage-map/) only uses available data from NOAA (temps and historical trends), and this is the main map that people use 
+- ecosystem modeling, in terms of ecohydrological model for Lake Urmia (think Aral Sea)
+  - do I want to focus on modeling for my main research going forward?
+  - would this ultimately become ecological forecasting?
+- we were told that several projects stemming from GIS 713 ultimately became papers or potential papers. Would a goal for this term be something similar?
+
+#### Overall research
+- do we want a specific calendar for my timeline?
+- I know I should have a prelim list of committee members by January, so I can start sending out emails. Other deadlines?
 
 
 #### Communications
